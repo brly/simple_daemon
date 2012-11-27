@@ -56,10 +56,11 @@ void SimpleDaemon::init() {
   for (int fd = 0; fd < fd_limit; ++fd)
     close(fd);
 
-  ready();
 }
 
 void SimpleDaemon::run() {
+  ready();
+  
   struct sockaddr_in me;
   init_sockaddr_in_struct(me, port_);
 
